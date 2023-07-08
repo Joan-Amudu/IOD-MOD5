@@ -1,6 +1,6 @@
 class Message {
     constructor() {
-        this.id = this.#getRandomInt(10000)
+        this.id = this.#getRandomInt(1000)
       }
       #getRandomInt(max) {
         return Math.floor(Math.random() * max);
