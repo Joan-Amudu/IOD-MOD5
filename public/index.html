@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <title>Calculator Example</title>
+</head>
+<body>
+<div>Addtion
+    <span id="add"></span>
+</div>
+<div>Subtraction
+    <span id="subtract"></span>
+</div>
+<div>Division
+    <span id="divide"></span>
+</div>
+<div>Multiplication
+    <span id="multiply"></span>
+</div>
+</body>
+<script>
+let num1=3;
+let num2=12;
+fetch(`/calculator/add?num1=${num1}&num2=${num2}`)
+.then(response => response.json())
+.then(data => {
+    document.getElementById("add").innerHTML = data.add;
+})
+
+fetch(`/calculator/subtract?num1=${num1}&num2=${num2}`)
+.then(response => response.json())
+.then(data => {
+    document.getElementById("subtract").innerHTML = data.subtract;
+})
+
+fetch(`/calculator/divide?num1=${num1}&num2=${num2}`)
+.then(response => response.json())
+.then(data => {
+        document.getElementById("divide").innerHTML = data.divide;
+})
+
+fetch(`/calculator/multiply?num1=${num1}&num2=${num2}`)
+.then(response => response.json())
+.then(data => {
+    document.getElementById("multiply").innerHTML = data.multiply;
+})
+</script>
+</html>
